@@ -2,13 +2,13 @@
   "containerDefinitions": [
     {
       "name": "nginx",
-      "image": "<your nginx reverse proxy image URL here>",
-      "memory": "256",
-      "cpu": "256",
+      "image": "348873090553.dkr.ecr.us-east-1.amazonaws.com/handson-cli-reverse-proxy-repository:0.0.1",
+      "memory": 256,
+      "cpu": 256,
       "essential": true,
       "portMappings": [
         {
-          "containerPort": "80",
+          "containerPort": 80,
           "protocol": "tcp"
         }
       ],
@@ -18,14 +18,14 @@
     },
     {
       "name": "app",
-      "image": "<your app image URL here>",
-      "memory": "256",
-      "cpu": "256",
+      "image": "348873090553.dkr.ecr.us-east-1.amazonaws.com/handson-cli-app-repository:0.0.1",
+      "memory": 256,
+      "cpu": 256,
       "essential": true
     }
   ],
   "volumes": [],
   "networkMode": "bridge",
   "placementConstraints": [],
-  "family": "application-stack"
+  "family": "handson-cli-task-definition"
 }
